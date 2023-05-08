@@ -3,7 +3,7 @@ import { Form } from "./FormAddContacts/FormAddContacts";
 import { nanoid } from 'nanoid';
 import { ContactList } from "./Contacts/Contacts";
 import { Search } from "./Search/Search";
-
+import { Container, Title, ListTitle } from './Container/Container.Styled'
 
 export class App extends Component {
   state = {
@@ -12,10 +12,7 @@ export class App extends Component {
     {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
     {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},],
     filter: '',
-    name: '',
-    number: ''
   }
-
   handleInputChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
@@ -64,12 +61,14 @@ export class App extends Component {
 
   render() {
     const filteredContacts = this.getFilteredContacts();
-    return ( <div>
+    return ( <Container>
+      <Title>Phonebook</Title>
 <Form name={this.state.name}
 number={this.state.number}
 handleInputChange={this.handleInputChange}
 handleSubmit={this.handleSubmit}></Form>
+<ListTitle>Contacts</ListTitle>
 <Search filter= {this.state.filter} handleFilterChange = {this.handleFilterChange}></Search>
-    <ContactList contacts={filteredContacts} onDeleteContact={this.handleDeleteContact}> </ContactList> 
-    </div> ) 
+<ContactList contacts={filteredContacts} onDeleteContact={this.handleDeleteContact}> </ContactList> 
+    </Container> ) 
     } }

@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
+import { FormAdd, Label, Input, Button} from './Form.Styled'
 export const Form = ({name, number, handleSubmit, handleInputChange}) => { return (
-    <form onSubmit={handleSubmit} onChange={handleInputChange}>
-    <label>
+    <FormAdd onSubmit={handleSubmit} onChange={handleInputChange}>
+    <Label>
       Name:
-      <input
+      <Input
         type="text"
         name="name"
         value={name}
@@ -11,10 +12,10 @@ export const Form = ({name, number, handleSubmit, handleInputChange}) => { retur
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-    </label>
-    <label>
+    </Label>
+    <Label>
       Number:
-      <input
+      <Input
         type="tel"
         name="number"
         value={number}
@@ -22,9 +23,9 @@ export const Form = ({name, number, handleSubmit, handleInputChange}) => { retur
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
       />
-    </label>
-    <button type="submit">Add contact</button>
-  </form> )
+    </Label>
+    <Button type="submit">Add contact</Button>
+  </FormAdd> )
    }
 
    Form.propTypes = {
