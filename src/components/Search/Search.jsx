@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 export const Search = ({filter, handleFilterChange}) => {
 return (
 <div>
@@ -10,3 +11,8 @@ onChange={handleFilterChange}
       />
     </label>
 </div> )} 
+
+Search.propTypes = {
+      filter: PropTypes.string,
+      handleFilterChange: PropTypes.func,
+}

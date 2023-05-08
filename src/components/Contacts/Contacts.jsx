@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 export const ContactList = ({ contacts, onDeleteContact }) => (
     <ul>
       {contacts.map(({ id, name, number }) => (
@@ -7,3 +8,8 @@ export const ContactList = ({ contacts, onDeleteContact }) => (
       ))}
     </ul>
   );
+
+  ContactList.propTypes = {
+    contacts: PropTypes.arrayOf(PropTypes.shape),
+    onDeleteContact: PropTypes.func,
+  }

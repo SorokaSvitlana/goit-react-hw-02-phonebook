@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types'
 export const Form = ({name, number, handleSubmit, handleInputChange}) => { return (
     <form onSubmit={handleSubmit} onChange={handleInputChange}>
     <label>
@@ -26,3 +26,10 @@ export const Form = ({name, number, handleSubmit, handleInputChange}) => { retur
     <button type="submit">Add contact</button>
   </form> )
    }
+
+   Form.propTypes = {
+    name: PropTypes.string, 
+    number: PropTypes.string, 
+    handleSubmit: PropTypes.func, 
+    handleInputChange: PropTypes.func, 
+  }
